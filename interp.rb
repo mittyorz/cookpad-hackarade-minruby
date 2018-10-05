@@ -50,9 +50,11 @@ def evaluate(exp, env)
     # Advice 2: Apply `evaluate` to each child of this node.
     i = 1
     while exp[i] != nil
-      evaluate(exp[i], env)
+      ret = evaluate(exp[i], env)
       i = i + 1
     end
+    ret
+
 
   # The second argument of this method, `env`, is an "environement" that
   # keeps track of the values stored to variables.
